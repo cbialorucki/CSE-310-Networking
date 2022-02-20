@@ -23,7 +23,7 @@ class Server:
             with conn:
                 while True:
                     Util.alert()
-                    data = conn.recv(1024)
+                    data = conn.recv(const.MAX_MESSAGE_SIZE)
                     message = data.decode()
                     if message.startswith("/disconnect"):
                         Util.disconnect(message=message)

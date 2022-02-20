@@ -2,39 +2,40 @@
 
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This is a simple peer-to-peer chat application written in Python. To use this software, one user will need to connect to another. On two separate computers, open the program from main.py. On one computer, which we will call the 'server', type 'wait' and hit enter to set up a chat room. The IP address of that computer will be displayed in the application. On the other computer, which we will call the 'client', type 'connect' to connect to the 'server' computer. After that, it will ask you for the IP address of the computer you want to connect to. Enter the IP address of the 'server' computer, and you will connect to each other. You will then be able to communicate back and forth.
 
-{Provide a description the networking program that you wrote. Describe how to use your software.  If you did Client/Server, then you will need to describe how to start both.}
+Nicknames can be set by sending "/nickname" followed by the new nickname you would like to use. You can also disconnect from the chat room by sending "/disconnect".
 
-{Describe your purpose for writing this software.}
+This software was developed to help teach me about how to use network sockets generally. It learned a lot completing this project and I hope to use sockets in the development of off-grid intranet systems.
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (you will need to show two pieces of software running and communicating with each other) and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/cTAdSscDhq0)
 
 # Network Communication
 
-{Describe the architecture that you used (client/server or peer-to-peer)}
+I believe the architecture of this program more closely resembles a peer to peer network than a client/server model. While one user waits for the other to connect to it, both users share about equal amounts of information. Conversations are conducted directly to each other without another server in between.
 
-{Identify if you are using TCP or UDP and what port numbers are used.}
+This program communicates using a TCP connection. It uses port 65500 by default, but this can easily changed by editing the PORT variable in the const.py file.
 
-{Identify the format of messages being sent between the client and server or the messages sent between two peers.}
+Simple UTF-8 stings are sent between clients in this program.
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+IDE and Tools
+* Visual Studio Code
+* Another PC, a virtual PC, or the Windows Subsystem for Linux
+* A network connection
 
-{Describe the programming language that you used and any libraries.}
+Programming Languages and Libraries
+* Python
+* socket
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Socket Library - Python Official Documentation](https://docs.python.org/3/library/socket.html)
+* [Python Socket - Real Python](https://realpython.com/python-sockets/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Adding a graphical user interface (GUI) would make this application much more useful to people who do not like using the command line.
+* Using multi-threading, it would be possible for either user to send another message without waiting for the other user to send a message. This would help make conversations more natural.
+* Adding support for sending files or binary data would also make this program more useful.

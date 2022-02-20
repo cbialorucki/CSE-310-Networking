@@ -40,7 +40,7 @@ class Client:
                 else:
                     client.sendall(Util.generateMessage(self.nickname, userInput).encode())
 
-                data = client.recv(1024)
+                data = client.recv(const.MAX_MESSAGE_SIZE)
                 message = data.decode()
                 if message.startswith("/disconnect"):
                     Util.disconnect(message=message)
